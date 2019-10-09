@@ -46,13 +46,17 @@ puts bigger_two([1,7], [4,4])
 
 def series_up(num)
     list = []
-    check = num
+
     length = num * (num + 1)/2
-
+    list_num = 0
+    max = 1 # need to make a number size limit
     length.times do |i|
-        list[i] = num
-        
-
+        if list_num == max
+            list_num = 0
+            max += 1
+        end    
+        list_num += 1
+        list[i] = list_num
     end
 
     return list
@@ -60,7 +64,7 @@ def series_up(num)
 end
 
 
-puts series_up(1)
-puts series_up(2)
-puts series_up(3)
-puts series_up(4)
+print series_up(1)
+print series_up(2)
+print series_up(3)
+print series_up(4)
